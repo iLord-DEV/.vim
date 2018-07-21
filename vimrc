@@ -1,5 +1,6 @@
 " .vimrc
 set encoding=utf-8
+execute pathogen#infect()
 
 syntax on                         " show syntax highlighting
 filetype plugin indent on
@@ -24,7 +25,24 @@ set nofoldenable                  " disable code folding
 set clipboard=unnamed             " use the system clipboard
 set wildmenu                      " enable bash style tab completion
 set showmode
+set visualbell
+set undofile
 
+" \ under ,
+"let mapleader = ","
+
+
+" learn to get used to hjkl
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
 
 " Colors {{{
 syntax enable           " enable syntax processing
@@ -32,14 +50,16 @@ colorscheme codedark
 "set termguicolors
 " }}}
 
+" set Powerline Font
+let g:airline_powerline_fonts = 1
 
 set laststatus=2                  " always show status bar
 " now set it up to change the status line based on mode
 " highlight the status bar when in insert mode
-if version >= 700
-  au InsertEnter * hi StatusLine ctermfg=235 ctermbg=2
-  au InsertLeave * hi StatusLine ctermbg=240 ctermfg=12
-endif
+"if version >= 700
+"  au InsertEnter * hi StatusLine ctermfg=235 ctermbg=2
+"  au InsertLeave * hi StatusLine ctermbg=240 ctermfg=12
+"endif
 
 " put git status, column/row number, total lines, and percentage in status
 "set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
