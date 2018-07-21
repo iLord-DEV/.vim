@@ -65,6 +65,9 @@ set laststatus=2                  " always show status bar
 "set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
 
 
+" `gf` opens file under cursor in a new vertical split
+nnoremap gf :vertical wincmd f<CR>
+
 " highlight trailing spaces in annoying red
 highlight ExtraWhitespace ctermbg=1 guibg=red
 match ExtraWhitespace /\s\+$/
@@ -72,6 +75,8 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+"AND! Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 
 " FINDING FILES: {{{
