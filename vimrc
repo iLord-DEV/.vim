@@ -93,3 +93,6 @@ augroup END
 "Autocomplete
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd BufNewFile,BufRead *.scss             set ft=scss.css
+
+" Enable ESLint only for JavaScript.
+let b:ale_linters = ['eslint']
