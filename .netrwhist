@@ -1,11 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/mb-heim/Desktop'
-let g:netrw_dirhist_2='/Users/mb-heim'
-let g:netrw_dirhist_3='/Users/mb-heim/.vim'
-let g:netrw_dirhist_4='/Users/mb-heim'
-let g:netrw_dirhist_5='/Users/mb-heim/Sites'
-let g:netrw_dirhist_6='/Users/mb-heim'
-let g:netrw_dirhist_7='/Users/mb-heim/Sites'
-let g:netrw_dirhist_8='/Users/mb-heim/Sites/gulp'
-let g:netrw_dirhist_9='/Users/mb-heim/.vim'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Users/mb-heim/.vim/bundle'
+let g:netrw_dirhist_2='/Users/mb-heim/.vim'
