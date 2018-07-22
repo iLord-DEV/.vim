@@ -26,44 +26,32 @@ set clipboard=unnamed             " use the system clipboard
 set wildmenu                      " enable bash style tab completion
 set showmode
 set visualbell
-set undofile
+"set undofile
 
 " \ under ,
 "let mapleader = ","
 
 
 " learn to get used to hjkl
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-nnoremap j gj
-nnoremap k gk
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
+"nnoremap j gj
+"nnoremap k gk
 
 " Colors {{{
-syntax enable           " enable syntax processing
-colorscheme codedark
+colorscheme badwolf
+"colorscheme codedark
 "set termguicolors
 " }}}
 
 " set Powerline Font
 let g:airline_powerline_fonts = 1
-
-set laststatus=2                  " always show status bar
-" now set it up to change the status line based on mode
-" highlight the status bar when in insert mode
-"if version >= 700
-"  au InsertEnter * hi StatusLine ctermfg=235 ctermbg=2
-"  au InsertLeave * hi StatusLine ctermbg=240 ctermfg=12
-"endif
-
-" put git status, column/row number, total lines, and percentage in status
-"set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
-
 
 " `gf` opens file under cursor in a new vertical split
 nnoremap gf :vertical wincmd f<CR>
@@ -89,4 +77,19 @@ set path+=**
 set ignorecase          " ignore case when searching
 set incsearch           " search as characters are entered
 set hlsearch            " highlight all matches
+
+" netrw a bit like Nerdtree...
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
 " }}}
+
+"Autocomplete
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd BufNewFile,BufRead *.scss             set ft=scss.css

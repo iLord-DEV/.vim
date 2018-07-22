@@ -1,6 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask'
-let g:netrw_dirhist_2='/usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask/homebrew-cask'
-let g:netrw_dirhist_3='/usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask'
-let g:netrw_dirhist_4='/Users/ilord'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/mb-heim/Desktop'
+let g:netrw_dirhist_2='/Users/mb-heim'
+let g:netrw_dirhist_3='/Users/mb-heim/.vim'
