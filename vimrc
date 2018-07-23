@@ -29,24 +29,30 @@ set visualbell
 "set undofile
 
 " \ under ,
-"let mapleader = ","
+let mapleader = ","
 
 
-" learn to get used to hjkl
-"nnoremap <up> <nop>
-"nnoremap <down> <nop>
-"nnoremap <left> <nop>
-"nnoremap <right> <nop>
-"inoremap <up> <nop>
-"inoremap <down> <nop>
-"inoremap <left> <nop>
-"inoremap <right> <nop>
-"nnoremap j gj
-"nnoremap k gk
+
+" MAPPING
+
+" Quick save
+noremap <Leader>s :update<CR>
+
+" learn to get used to hjkl Needed for Autocomplete?
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
 
 " Colors {{{
-colorscheme badwolf
-"colorscheme codedark
+"colorscheme badwolf
+colorscheme codedark
 "set termguicolors
 " }}}
 
@@ -94,12 +100,16 @@ augroup END
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd BufNewFile,BufRead *.scss             set ft=scss.css
 
-" Syntastic Settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" EMMET just for HTML & CSS
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+
+
+
+
+
+
+
+
+
