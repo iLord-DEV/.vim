@@ -9,7 +9,8 @@ set ts=2                          " set indent to 2 spaces
 set shiftwidth=2
 set expandtab                     " use spaces, not tab characters
 set nocompatible                  " don't need to be compatible with old vim
-set relativenumber                " show relative line numbers
+set number                        " show current line Number and ...
+set relativenumber                " ... show relative line numbers
 set showmatch                     " show bracket matches
 set ignorecase                    " ignore case in search
 set hlsearch                      " highlight all search matches
@@ -35,25 +36,37 @@ let mapleader = ","
 
 " MAPPING
 
+" move by virtual lines
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+" Toggle light/dark backgrounds
+"nnoremap <Leader>bg :let &background = (&background == "dark" ? "light" : "dark")<CR>
 " Quick save
 noremap <Leader>s :update<CR>
 
+" `jj` and `jk` to throw you into normal mode from insert mode
+inoremap jj <Esc>
+inoremap jk <Esc>
 " learn to get used to hjkl Needed for Autocomplete?
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-nnoremap j gj
-nnoremap k gk
+map  <Up>    <Nop>
+imap <Up>    <Nop>
+map  <Down>  <Nop>
+imap <Down>  <Nop>
+map  <Left>  <Nop>
+imap <Left>  <Nop>
+map  <Right> <Nop>
+imap <Right> <Nop>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
 
 " Colors {{{
 "colorscheme badwolf
+set t_Co=256
 colorscheme codedark
 "set termguicolors
+set background=dark
 " }}}
 
 " set Powerline Font
